@@ -1,14 +1,32 @@
 import React, { useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
+import axios from 'axios';
+import { API_BASE_URL, ACCESS_TOKEN_NAME } from '../../constants/apiConstants';
 
-function Home() {
-  useEffect(() => {document.body.style.backgroundColor = '#198B26'}, []);
+function Home(props) {
+  useEffect(() => {
+    axios.get(API_BASE_URL+'/verifyToken', { headers: { 'Authorization': 'Bearer ' + localStorage.getItem(ACCESS_TOKEN_NAME) } })
+    .then(function (response) {
+      if(response.status !== 200) {
+        redirectToLogin()
+      }
+    })
+    .catch(function (error) {
+      redirectToLogin()
+    });
+  })
+
+  function redirectToLogin() {
+    props.history.push('/login');
+  }
   
   return (
-    <div className='body bg-primary text-white'>
-      <h1 className='display-1'>Welcome!</h1>
-      <h1 className='display-1'>Everything is fine</h1>
+    <div className='body'>
+      <br />
+      <h1 className='display-1 text-center text-primary'>Welcome!</h1>
+      <h1 className='display-1 text-center text-primary'>Everything is fine</h1>
     </div>
   )
 }
 
-export default Home;
+export default withRouter(Home);

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import PrivateRoute from './utils/PrivateRoute';
 import Header from './components/Header/Header';
 import LoginForm from './components/LoginForm/LoginForm';
 import Home from './components/Home/Home';
@@ -13,16 +13,21 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Header />
           <Switch>
             <Route path='/' exact={true}>
-              <Header />
               <div className='container d-flex align-items-center flex-column'>
                 <LoginForm />
               </div>
             </Route>
-            <Route path='/home'>
-              <Home />
+            <Route path='/login'>
+              <div className='container d-flex align-items-center flex-column'>
+                <LoginForm />
+              </div>
             </Route>
+            <PrivateRoute path='/home'>
+              <Home />
+            </PrivateRoute>
           </Switch>
       </div>
     </Router>

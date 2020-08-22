@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { API_BASE_URL,  ACCESS_TOKEN_NAME } from '../../constants/apiConstants';
 import { withRouter } from "react-router-dom";
 
 function LoginForm(props) {
@@ -6,7 +8,8 @@ function LoginForm(props) {
   
   const [state, setState] = useState({
     username: '',
-    password: ''
+    password: '',
+    errorMessage: null,
   })
 
   const handleChange = (e) => {
@@ -23,7 +26,17 @@ function LoginForm(props) {
       'username': state.username,
       'password': state.password,
     }
-    redirectToHome();
+    axios.post(API_BASE_URL+'/login', payload)
+      .then((response) => {
+        if (response.status === 200) {
+          localStorage.setItem(ACCESS_TOKEN_NAME, response.data.token);
+          redirectToHome();
+          props.showError(null)
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   const redirectToHome = () => {
@@ -31,10 +44,11 @@ function LoginForm(props) {
   }
 
   return (
-    <div className='card col-12 col-lg-4 login-card mt-2 hv-center'>
+    <div className='card w-50 login-card mt-5 hv-center'>
+      <div className='card-header bg-primary text-white'>Please Login</div>
       <form>
       <br />
-        <div className='form-group text-left'>
+        <div className='form-group col-lg-12 text-left'>
           <label htmlFor='exampleUsername'>Username</label>
           <input type='username'
             className='form-control'
@@ -44,7 +58,7 @@ function LoginForm(props) {
             onChange={handleChange}
           />
         </div>
-        <div className='form-group text-left'>
+        <div className='form-group col-lg-12 text-left'>
           <label htmlFor='inputPassword'>Password</label>
           <input type='password'
             className='form-control'
