@@ -53,12 +53,19 @@ function LoginForm(props) {
   };
 
   const redirectToHome = () => {
-    props.history.push("/home");
+    props.history.push({
+      pathname: "/home",
+      state: {
+        username: state.username,
+      },
+    });
   };
 
   return (
     <div className="card w-50 login-card mt-5 hv-center">
-      <div className="card-header bg-primary text-white">Please Login</div>
+      <div className="card-header bg-primary text-center text-white">
+        Please Login
+      </div>
       <form>
         <br />
         <div className="form-group col-lg-12 text-left">
