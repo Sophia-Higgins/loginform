@@ -11,7 +11,7 @@ function Home(props) {
           Authorization: "Bearer " + localStorage.getItem(ACCESS_TOKEN_NAME),
         },
       })
-      .then(response => {
+      .then((response) => {
         if (response.status !== 200) {
           redirectToLogin();
         }
@@ -19,7 +19,7 @@ function Home(props) {
       .catch(() => {
         redirectToLogin();
       });
-  })
+  });
 
   function redirectToLogin() {
     props.history.push("/login");
