@@ -10,6 +10,8 @@ In a seperate terminal, run the following commands to start the loginform app.
 
 `npm start`
 
+A new window in your browser should automatically open. If not, please navigate to [http://localhost:3000/](http://localhost:3000/).
+
 ## Tests
 
 `npm test`
