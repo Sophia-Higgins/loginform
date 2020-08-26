@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginForm /> should match the snapshot 1`] = `
+<MemoryRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "kmvlxv",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "kmvlxv",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <withRouter(LoginForm)>
+      <LoginForm
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "canGo": [Function],
+            "createHref": [Function],
+            "entries": Array [
+              Object {
+                "hash": "",
+                "key": "kmvlxv",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+            ],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "index": 0,
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "kmvlxv",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+        location={
+          Object {
+            "hash": "",
+            "key": "kmvlxv",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          }
+        }
+        match={
+          Object {
+            "isExact": true,
+            "params": Object {},
+            "path": "/",
+            "url": "/",
+          }
+        }
+      >
+        <div
+          className="card w-50 login-card mt-5 hv-center"
+        >
+          <div
+            className="card-header bg-primary text-center text-white"
+          >
+            Please Login
+          </div>
+          <form>
+            <br />
+            <div
+              className="form-group col-lg-12 text-left"
+            >
+              <label
+                htmlFor="exampleUsername"
+              >
+                Username
+              </label>
+              <input
+                className="form-control"
+                id="username"
+                onChange={[Function]}
+                placeholder="Username"
+                type="username"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group col-lg-12 text-left"
+            >
+              <label
+                htmlFor="inputPassword"
+              >
+                Password
+              </label>
+              <input
+                className="form-control"
+                id="password"
+                onChange={[Function]}
+                placeholder="Password"
+                type="password"
+                value=""
+              />
+              <br />
+              <div
+                className="alert alert-danger mt-2"
+                role="alert"
+                style={
+                  Object {
+                    "display": "none",
+                  }
+                }
+              />
+              <div
+                className="row justify-content-center"
+              >
+                <button
+                  className="btn btn-primary"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Login
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </LoginForm>
+    </withRouter(LoginForm)>
+  </Router>
+</MemoryRouter>
+`;

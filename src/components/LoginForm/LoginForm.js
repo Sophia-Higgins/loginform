@@ -3,7 +3,7 @@ import axios from "axios";
 import { API_BASE_URL, ACCESS_TOKEN_NAME } from "../../constants/apiConstants";
 import { withRouter } from "react-router-dom";
 
-function LoginForm(props) {
+export function LoginForm(props) {
   useEffect(() => {
     document.body.style.backgroundColor = "#fff";
   }, []);
