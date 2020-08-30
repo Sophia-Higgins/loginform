@@ -1,15 +1,15 @@
 import React from "react";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
-import Header from "./Header";
+import App from "./App";
 
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<Header />);
+  wrapper = shallow(<App />);
 });
 
-describe("<Header />", () => {
+describe("<App />", () => {
   it("should match the snapshot", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });

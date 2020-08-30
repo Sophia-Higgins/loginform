@@ -1,10 +1,13 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { ACCESS_TOKEN_NAME } from "../../constants/apiConstants";
 
-function Header(props) {
+function Header() {
+  let history = useHistory();
+  let location = useLocation();
+
   function renderLogout() {
-    if (props.location.pathname === "/home") {
+    if (location.pathname === "/home") {
       return (
         <div>
           <button className="btn btn-light" onClick={() => handleLogout()}>
@@ -17,7 +20,7 @@ function Header(props) {
 
   function handleLogout() {
     localStorage.removeItem(ACCESS_TOKEN_NAME);
-    props.history.push("/login");
+    history.push("/login");
   }
 
   return (
@@ -32,4 +35,4 @@ function Header(props) {
     </nav>
   );
 }
-export default withRouter(Header);
+export default Header;

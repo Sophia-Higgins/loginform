@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should match the snapshot 1`] = `
+<div
+  className="body"
+>
+  <br />
+  <h1
+    className="display-1 text-center text-primary"
+  >
+    Welcome 
+    test
+    ! 
+    <br />
+     Everything is fine.
+  </h1>
+</div>
+`;

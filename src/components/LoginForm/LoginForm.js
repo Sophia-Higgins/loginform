@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { API_BASE_URL, ACCESS_TOKEN_NAME } from "../../constants/apiConstants";
-import { withRouter } from "react-router-dom";
+import axios from "axios";
 
-export function LoginForm(props) {
-  useEffect(() => {
-    document.body.style.backgroundColor = "#fff";
-  }, []);
-
+export function LoginForm() {
+  let history = useHistory();
   const [state, setState] = useState({
     username: "",
     password: "",
@@ -53,7 +50,7 @@ export function LoginForm(props) {
   };
 
   const redirectToHome = () => {
-    props.history.push({
+    history.push({
       pathname: "/home",
       state: {
         username: state.username,
@@ -112,4 +109,4 @@ export function LoginForm(props) {
   );
 }
 
-export default withRouter(LoginForm);
+export default LoginForm;

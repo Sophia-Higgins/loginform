@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
-import { withRouter } from "react-router-dom";
-import axios from "axios";
+import { useHistory, useLocation } from "react-router-dom";
 import { API_BASE_URL, ACCESS_TOKEN_NAME } from "../../constants/apiConstants";
+import axios from "axios";
 
-const Home = (props) => {
+const Home = () => {
+  let history = useHistory();
+  let location = useLocation();
+
   useEffect(() => {
     axios
       .get(API_BASE_URL + "/verifyToken", {
@@ -22,17 +25,17 @@ const Home = (props) => {
   });
 
   function redirectToLogin() {
-    props.history.push("/login");
+    history.push("/login");
   }
 
   return (
     <div className="body">
       <br />
       <h1 className="display-1 text-center text-primary">
-        Welcome {props.location.state.username}! <br /> Everything is fine.
+        Welcome {location.state.username}! <br /> Everything is fine.
       </h1>
     </div>
   );
-}
+};
 
-export default withRouter(Home);
+export default Home;
