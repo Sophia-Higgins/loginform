@@ -1,9 +1,12 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute";
 import Header from "./components/Header/Header";
 import LoginForm from "./components/LoginForm/LoginForm";
 import Home from "./components/Home/Home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Account from "./components/Account/Account";
+import Application from "./components/App/Application";
+import Payment from "./components/Payment/Payment";
 
 function App() {
   return (
@@ -23,6 +26,15 @@ function App() {
           </Route>
           <PrivateRoute path="/home">
             <Home />
+          </PrivateRoute>
+          <PrivateRoute path="/account">
+            <Account />
+          </PrivateRoute>
+          <PrivateRoute path="/application">
+            <Application />
+          </PrivateRoute>
+          <PrivateRoute path="/payment">
+            <Payment />
           </PrivateRoute>
         </Switch>
       </div>
