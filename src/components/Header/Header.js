@@ -64,14 +64,10 @@ function Header() {
         {renderAccountLink()}
       </div>
       <div className="row col-sm justify-content-center text-white">
-        <Link className="nav-link text-white" to="/application">
           {renderApplicationLink()}
-        </Link>
       </div>
       <div className="row col-sm justify-content-center text-white">
-        <Link className="nav-link text-white" to="/payment">
           {renderPaymentLink()}
-        </Link>
       </div>
       <div className="row col-sm justify-content-end">{renderLogout()}</div>
     </nav>
